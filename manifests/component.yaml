@@ -1,0 +1,7 @@
+name: CyberKongz ML Component
+description: A component to deploy CyberKongz ML model using Kubeflow
+inputs: []
+implementation:
+  container:
+    image: "your-docker-repo/cyberkongz-ml:latest"
+    command: ["python3", "src/app.py"]
