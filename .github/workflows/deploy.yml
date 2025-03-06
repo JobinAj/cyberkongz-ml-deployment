@@ -1,0 +1,27 @@
+name: Deploy to Kubeflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t your-docker-repo/cyberkongz-ml:latest .
+        docker push your-docker-repo/cyberkongz-ml:latest
+
+    - name: Apply Kubeflow Manifests
+      run: |
+        kubectl apply -f manifests/component.yaml
+        kubectl apply -f manifests/kubeflow-pipeline.py
