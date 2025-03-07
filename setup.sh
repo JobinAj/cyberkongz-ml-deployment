@@ -7,5 +7,5 @@ docker build -t jobinaj/cyberkongz-ml:latest .
 docker push jobinaj/cyberkongz-ml:latest
 
 # Deploy using Kubeflow
-kubectl apply -f manifests/component.yaml
+kubectl apply -f manifests/component.yaml --validate=false
 kubectl apply -f manifests/kubeflow-pipeline.py
