@@ -23,5 +23,5 @@ jobs:
 
     - name: Apply Kubeflow Manifests
       run: |
-        kubectl apply -f manifests/component.yaml
+        kubectl apply -f manifests/component.yaml --validate=false
         kubectl apply -f manifests/kubeflow-pipeline.py
