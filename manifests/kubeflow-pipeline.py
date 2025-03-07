@@ -4,7 +4,7 @@ from kfp import dsl
 def deploy_model():
     return dsl.ContainerOp(
         name="Deploy Model",
-        image="your-docker-repo/cyberkongz-ml:latest",
+        image="jobinaj/cyberkongz-ml:latest",
         arguments=[],
     )
 
