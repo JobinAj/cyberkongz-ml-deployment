@@ -1,7 +1,11 @@
-name: CyberKongz ML Component
-description: A component to deploy CyberKongz ML model using Kubeflow
-inputs: []
-implementation:
-  container:
-    image: "jobinaj/cyberkongz-ml:latest"
-    command: ["python3", "src/app.py"]
+apiVersion: kubeflow.org/v1alpha1
+kind: Component
+metadata:
+  name: cyberkongz-ml-component
+  description: A component to deploy CyberKongz ML model using Kubeflow
+spec:
+  inputs: []
+  implementation:
+    container:
+      image: "jobinaj/cyberkongz-ml:latest"
+      command: ["python3", "src/app.py"]
