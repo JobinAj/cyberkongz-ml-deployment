@@ -3,5 +3,5 @@ description: A component to deploy CyberKongz ML model using Kubeflow
 inputs: []
 implementation:
   container:
-    image: "your-docker-repo/cyberkongz-ml:latest"
+    image: "jobinaj/cyberkongz-ml:latest"
     command: ["python3", "src/app.py"]
